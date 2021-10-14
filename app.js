@@ -11,14 +11,7 @@
  */
 function fillInning(team, inning, runs) {
     let cells = document.querySelectorAll('td');
-    let cell_index = 0;
-
-    if(team=='home') {
-        cell_index = inning;
-    } else {
-        cell_index = 9 + inning;
-    }
-
+    let cell_index = inningToCellIndex(team, inning);
     cells[cell_index].innerHTML = `<div class='inning'><p>${runs}</p></div>`;
 }
 
@@ -39,14 +32,7 @@ function updateRuns(){
 function getInningValue(team, inning) {
     // Get the inning containers
     let cells = document.querySelectorAll('td');
-    let cell_index = 0;
-
-    // Go the right container
-    if(team=='home') {
-        cell_index = inning;
-    } else {
-        cell_index = 9 + inning;
-    }
+    let cell_index = inningToCellIndex(team, inning);
 
     // Parse the inner html for the number of funs.
     let innerHTML = cells[cell_index].innerHTML
@@ -57,4 +43,16 @@ function getInningValue(team, inning) {
     }
 
     return 0;
+}
+
+
+function inningToCellIndex(team, inning) {
+    // Go the right container
+    if(team=='home') {
+        return inning;
+    } else {
+        return 9 + inning;
+    }
+
+
 }
