@@ -110,6 +110,10 @@ function minusRun() {
     }
 }
 
+let sound1 = new Audio("sounds/buildup.mp3");
+let sound2 = new Audio("sounds/charge1.mp3");
+let sound3 = new Audio("sounds/charge2.mp3");
+let chicken = new Audio("sounds/chickendance.mp3");
 
 // Add EventListner to the add runs button.
 document.getElementById("add-run").addEventListener("click", function() {
@@ -121,4 +125,16 @@ document.getElementById("add-run").addEventListener("click", function() {
 document.getElementById("minus-run").addEventListener("click", function() {
     minusRun();
     updateRuns();
+});
+
+// Add EventListner to the random sounds button.
+document.getElementById("random-music").addEventListener("click", function() {
+    let num = Math.random();
+    if (num < 0.33) {
+        sound1.play();
+    } else if (num > 0.66) {
+        sound2.play();
+    } else {
+        sound3.play();
+    }
 });
