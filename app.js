@@ -129,6 +129,7 @@ document.getElementById("minus-run").addEventListener("click", function() {
 
 // Add EventListner to the random sounds button.
 document.getElementById("random-music").addEventListener("click", function() {
+    document.getElementById("display-img").src = "images/megaphone.png"
     let num = Math.random();
     if (num < 0.33) {
         sound1.play();
@@ -138,3 +139,9 @@ document.getElementById("random-music").addEventListener("click", function() {
         sound3.play();
     }
 });
+
+// Add EventListner to the chicken dance button.
+document.getElementById("chicken-dance").addEventListener("click", function(){
+    chicken.play();
+    document.getElementById("display-img").src = "images/sdchicken.jpg"
+})
