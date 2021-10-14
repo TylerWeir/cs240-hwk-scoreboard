@@ -1,5 +1,6 @@
 /* Your CSS definitions here */
-h1 {
+.scoreboard h1 {
+  padding-left: 160px;
   color: white;
   font-size: 28pt;
   font-family: Arial, Helvetica, sans-serif;
@@ -13,14 +14,19 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.contents {
-  margin: 10px;
-}
 .scoreboard {
-  width: 800px;
+  display: flex;
+  flex-direction: column;
   background-color: #326455;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
+  width: 700px;
+  border-radius: 20px;
+}
+.contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .inning {
@@ -28,8 +34,52 @@ h2 {
   width: 40px;
   border: 6px solid black;
   margin: 3px;
+  display: flex;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  justify-content: center;
 }
 
 .last {
   border: 6px solid white;
+}
+
+.logo-container {
+  margin-top: 50px;
+  margin-left: 20px;
+  height: 120px;
+  width: 120px;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.control-board {
+  background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+}
+
+.option {
+  color: white;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.control-board h1 {
+  color: white;
+  font-size: 28pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
