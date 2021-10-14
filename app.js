@@ -26,7 +26,6 @@ function fillRuns(team, runs) {
     cells[cell_index].innerHTML = `<div class='inning last'><p>${runs}</p></div>`;
 }
 
-
 /**
  *  Updates each team's run cell with the total number of runs scored by the team. 
  */
@@ -82,3 +81,15 @@ function inningToCellIndex(team, inning) {
         return 9 + inning;
     }
 }
+
+
+function addRun() {
+    let team = document.getElementById("team-selector").value;
+    let inning = parseInt(document.getElementById("inning-selector").value);
+
+    let currentRuns = getInningValue(team, inning);
+    fillInning(team, inning, currentRuns+1);
+
+}
+
+document.getElementById("add-run").addEventListener("click", addRun);
