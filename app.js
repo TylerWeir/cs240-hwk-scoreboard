@@ -27,7 +27,7 @@ function fillInning(team, inning, runs) {
  *  Updates each team's run cell with the total number of runs scored by the team. 
  */
 function updateRuns(){
-
+    
 }
 
 /**
@@ -37,5 +37,24 @@ function updateRuns(){
  * @returns {number} The runs scored by team in inning. 
  */
 function getInningValue(team, inning) {
-    return 1;
+    // Get the inning containers
+    let cells = document.querySelectorAll('td');
+    let cell_index = 0;
+
+    // Go the right container
+    if(team=='home') {
+        cell_index = inning;
+    } else {
+        cell_index = 9 + inning;
+    }
+
+    // Parse the inner html for the number of funs.
+    let innerHTML = cells[cell_index].innerHTML
+    
+    if (innerHTML.includes('<p>')) {
+        let runs = parseInt(innerHTML.match(/\d+/)[0])
+        return runs;
+    }
+
+    return 0;
 }
