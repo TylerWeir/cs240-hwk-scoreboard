@@ -82,14 +82,43 @@ function inningToCellIndex(team, inning) {
     }
 }
 
-
+/**
+ * Adds runs to the score board based on the options selected in the
+ * the control panel.
+ */
 function addRun() {
     let team = document.getElementById("team-selector").value;
     let inning = parseInt(document.getElementById("inning-selector").value);
 
     let currentRuns = getInningValue(team, inning);
     fillInning(team, inning, currentRuns+1);
-
 }
 
-document.getElementById("add-run").addEventListener("click", addRun);
+/**
+ * Subtracts runs to the score board based on the options selected in the
+ * the control panel.
+ */
+function minusRun() {
+    let team = document.getElementById("team-selector").value;
+    let inning = parseInt(document.getElementById("inning-selector").value);
+
+    let currentRuns = getInningValue(team, inning);
+    if(currentRuns > 0) {
+        fillInning(team, inning, currentRuns-1);
+    } else {
+        fillInning(team, inning, 0);
+    }
+}
+
+
+// Add EventListner to the add runs button.
+document.getElementById("add-run").addEventListener("click", function() {
+    addRun();
+    updateRuns();
+});
+
+// Add EventListner to the minus runs button.
+document.getElementById("minus-run").addEventListener("click", function() {
+    minusRun();
+    updateRuns();
+});
