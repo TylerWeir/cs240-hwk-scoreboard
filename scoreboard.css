@@ -66,6 +66,10 @@ img {
   flex-direction: column;
 }
 
+.right-options {
+  margin-right: 30px;
+}
+
 .options {
   display: flex;
   flex-direction: row;
@@ -75,6 +79,9 @@ img {
   color: white;
   font-size: 12pt;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .control-board h1 {
@@ -82,4 +89,54 @@ img {
   font-size: 28pt;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+
+.button {
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 12pt;
+  font-family: Courier, sans-serif;
+  margin: 5px;
+}
+
+.runs-button {
+  width: 30px;
+  height: 30px;
+}
+
+.sound-button {
+  width: 50px;
+  height: 30px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: grey;
+  min-width: 120px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
